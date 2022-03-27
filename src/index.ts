@@ -61,6 +61,7 @@ export function convert(input: number | string): string | boolean {
     bahtStr = '' + baht;
   } else if (typeof input === 'string') {
     let negativeLeadingZeroPattern = /^-0+/;
+    let leadingZeroPateern = /^0+/;
 
     if (input.startsWith('-')) {
       if (input === '-0') {
@@ -70,9 +71,13 @@ export function convert(input: number | string): string | boolean {
       }
     }
 
+    if (input.startsWith('0')) {
+      input = input.replace(leadingZeroPateern, EMPTY);
+    }
+
     let inputNum = Number(input);
 
-    if (isNaN(inputNum)) {
+    if (Number.isNaN(Number(input))) {
       return false;
     }
 
