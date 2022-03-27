@@ -191,6 +191,9 @@ describe('convert', () => {
     expect(convert(('-011' as unknown) as number)).toBe('ลบสิบเอ็ดบาทถ้วน');
     expect(convert(('-021' as unknown) as number)).toBe('ลบยี่สิบเอ็ดบาทถ้วน');
     expect(convert(('-030' as unknown) as number)).toBe('ลบสามสิบบาทถ้วน');
+    expect(convert(('01' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
+    expect(convert(('001' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
+    expect(convert(('0001' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
     expect(convert(('0123456789.999' as unknown) as number)).toEqual(
       'หนึ่งร้อยยี่สิบสามล้านสี่แสนห้าหมื่นหกพันเจ็ดร้อยแปดสิบเก้าบาทเก้าสิบเก้าสตางค์'
     );
@@ -206,7 +209,7 @@ describe('convert', () => {
     expect(convert(('-01654321.21' as unknown) as number)).toBe(
       'ลบหนึ่งล้านหกแสนห้าหมื่นสี่พันสามร้อยยี่สิบเอ็ดบาทยี่สิบเอ็ดสตางค์'
     );
-  })
+  });
 
   it('should convert looping string numbers correctly', () => {
     for (let i = 100; i >= 0; i--) {
