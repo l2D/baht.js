@@ -219,6 +219,9 @@ describe('convert', () => {
     expect(convert(('-011' as unknown) as number)).toBe('ลบสิบเอ็ดบาทถ้วน');
     expect(convert(('-021' as unknown) as number)).toBe('ลบยี่สิบเอ็ดบาทถ้วน');
     expect(convert(('-030' as unknown) as number)).toBe('ลบสามสิบบาทถ้วน');
+    expect(convert(('01' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
+    expect(convert(('001' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
+    expect(convert(('0001' as unknown) as number)).toBe('หนึ่งบาทถ้วน');
     expect(convert(('0123456789.999' as unknown) as number)).toEqual(
       'หนึ่งร้อยยี่สิบสามล้านสี่แสนห้าหมื่นหกพันเจ็ดร้อยแปดสิบเก้าบาทเก้าสิบเก้าสตางค์'
     );
