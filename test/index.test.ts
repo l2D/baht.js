@@ -180,18 +180,10 @@ describe('convert', () => {
   });
 
   it('should convert with leading zero before the decimal point in string format.', () => {
-    expect(convert(('0' as unknown) as number)).toBe(
-      'ศูนย์บาทถ้วน'
-    );
-    expect(convert(('-0' as unknown) as number)).toBe(
-      'ศูนย์บาทถ้วน'
-    );
-    expect(convert(('09.05' as unknown) as number)).toBe(
-      'เก้าบาทห้าสตางค์'
-    );
-    expect(convert(('11' as unknown) as number)).toBe(
-      'สิบเอ็ดบาทถ้วน'
-    );
+    expect(convert(('0' as unknown) as number)).toBe('ศูนย์บาทถ้วน');
+    expect(convert(('-0' as unknown) as number)).toBe('ศูนย์บาทถ้วน');
+    expect(convert(('09.05' as unknown) as number)).toBe('เก้าบาทห้าสตางค์');
+    expect(convert(('11' as unknown) as number)).toBe('สิบเอ็ดบาทถ้วน');
     expect(convert(('01234' as unknown) as number)).toBe(
       'หนึ่งพันสองร้อยสามสิบสี่บาทถ้วน'
     );
